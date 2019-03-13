@@ -1,0 +1,24 @@
+---
+applications:
+
+- name: test-project
+  memory: 1024M
+  timeout: 300
+  random-route: true
+  path: target/test-project-1.0-SNAPSHOT.jar
+  buildpacks:
+    - sap_java_buildpack
+  env:
+    TARGET_RUNTIME: spring-boot
+    SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO}'
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
+    ALLOW_MOCKED_AUTH_HEADER: true
+    #destinations: "[{name: 'ErpQueryEndpoint', url: 'https://odata-mock-server.cfapps.eu10.hana.ondemand.com/', username: 'DUMMY', password: 'dummy'}]"
+  #services:
+    #- my-destination
+    #- my-xsuaa
+#  services:
+#  - my-application-logs
+#  - my-xsuaa
+#  - my-destination
+#  - my-connectivity
