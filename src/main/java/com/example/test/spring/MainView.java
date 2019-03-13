@@ -24,43 +24,43 @@ public class MainView extends VerticalLayout {
         setSizeFull();
         addClassName("main-view");
 
-        H1 header = new H1("Vaadin Chat");
-        header.getElement().getThemeList().add("dark");
-        add(header);
+        // H1 header = new H1("Vaadin Chat");
+        // header.getElement().getThemeList().add("dark");
+        // add(header);
 
-        askUserName();
+        // askUserName();
     }
 
-    private void askUserName() {
-        HorizontalLayout userNameLayout = new HorizontalLayout();
-        TextField userNameField = new TextField();
-        Button startButton = new Button("Start Chatting");
-        userNameLayout.add(userNameField, startButton);
+    // private void askUserName() {
+    //     HorizontalLayout userNameLayout = new HorizontalLayout();
+    //     TextField userNameField = new TextField();
+    //     Button startButton = new Button("Start Chatting");
+    //     userNameLayout.add(userNameField, startButton);
 
-        startButton.addClickListener(click -> {
-            String userName = userNameField.getValue();
-            remove(userNameLayout);
-            showChat();
-        });
+    //     startButton.addClickListener(click -> {
+    //         String userName = userNameField.getValue();
+    //         remove(userNameLayout);
+    //         showChat();
+    //     });
 
-        add(userNameLayout);
-    }
+    //     add(userNameLayout);
+    // }
 
-    private void showChat() {
-        MessageList messageList = new MessageList();
-        add(messageList, createInputLayout());
-        expand(messageList);
-    }
+    // private void showChat() {
+    //     MessageList messageList = new MessageList();
+    //     add(messageList, createInputLayout());
+    //     expand(messageList);
+    // }
 
-    private Component createInputLayout() {
-        HorizontalLayout inpuLayout = new HorizontalLayout();
-        inpuLayout.setWidth("100%");
-        TextField messageField = new TextField();
-        Button sendButton = new Button("Send!");
-        sendButton.getElement().getThemeList().add("primary"); 
-        inpuLayout.add(messageField, sendButton);
-        inpuLayout.expand(messageField);
-        return inpuLayout;
-    }
+    // private Component createInputLayout() {
+    //     HorizontalLayout inpuLayout = new HorizontalLayout();
+    //     inpuLayout.setWidth("100%");
+    //     TextField messageField = new TextField();
+    //     Button sendButton = new Button("Send!");
+    //     sendButton.getElement().getThemeList().add("primary"); 
+    //     inpuLayout.add(messageField, sendButton);
+    //     inpuLayout.expand(messageField);
+    //     return inpuLayout;
+    // }
 
 }
