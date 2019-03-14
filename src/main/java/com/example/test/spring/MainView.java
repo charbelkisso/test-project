@@ -4,6 +4,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.notification.Notification;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,6 +25,12 @@ public class MainView extends VerticalLayout {
         setSizeFull();
         addClassName("main-view");
 
+        PartnerService service = new PartnerService(
+            "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner", 
+            "S5Z7ku2uaH2NiZRShFXCWhQA1BEaAxHJ"
+            );
+        Paragraph p = new Paragraph(service.getPartners());     
+        add(p);
         // H1 header = new H1("Vaadin Chat");
         // header.getElement().getThemeList().add("dark");
         // add(header);
