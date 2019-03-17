@@ -15,19 +15,12 @@ import com.vaadin.flow.server.PWA;
 
 @Route("")
 @StyleSheet(MainView.FRONTEND_STYLES_STYLES_CSS)
-public class MainView extends VerticalLayout {
+public class MainView extends ViewTemplate {
 
     static final String FRONTEND_STYLES_STYLES_CSS = "frontend://styles/styles.css";
 
     public MainView() {
-        setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        setSizeFull();
-        addClassName("main-view");
-
-        H1 header = new H1("Vaadin Chat");
-        header.getElement().getThemeList().add("dark");
-        add(header);
-
+        super();
         askUserName();
     }
 
